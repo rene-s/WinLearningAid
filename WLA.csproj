@@ -1,0 +1,74 @@
+﻿<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <ProjectGuid>{0215BE9E-354F-4AAE-BA2B-C9DF7CD1145B}</ProjectGuid>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>WLA</RootNamespace>
+    <AssemblyName>WLA</AssemblyName>
+    <AllowUnsafeBlocks>False</AllowUnsafeBlocks>
+    <NoStdLib>False</NoStdLib>
+    <WarningLevel>4</WarningLevel>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <ApplicationIcon>Dateien\bubble.ico</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+    <OutputPath>bin\Debug\</OutputPath>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>Full</DebugType>
+    <Optimize>False</Optimize>
+    <CheckForOverflowUnderflow>True</CheckForOverflowUnderflow>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+    <OutputPath>bin\Release\</OutputPath>
+    <DebugSymbols>false</DebugSymbols>
+    <DebugType>None</DebugType>
+    <Optimize>True</Optimize>
+    <CheckForOverflowUnderflow>True</CheckForOverflowUnderflow>
+    <DefineConstants>TRACE</DefineConstants>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Platform)' == 'AnyCPU' ">
+    <RegisterForComInterop>False</RegisterForComInterop>
+    <GenerateSerializationAssemblies>Auto</GenerateSerializationAssemblies>
+    <BaseAddress>4194304</BaseAddress>
+    <PlatformTarget>x86</PlatformTarget>
+    <FileAlignment>4096</FileAlignment>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.Targets" />
+  <ItemGroup>
+    <Reference Include="Interop.SpeechLib">
+      <HintPath>Dateien\Interop.SpeechLib.dll</HintPath>
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AssemblyInfo.cs" />
+    <Compile Include="ItemsList.cs" />
+    <Compile Include="Settings.cs" />
+    <Compile Include="Text2Speech.cs" />
+    <Compile Include="ConfigForm1.cs" />
+    <Compile Include="ConfigForm1.Designer.cs" />
+    <Compile Include="Item.cs" />
+    <Compile Include="NotificationIcon.cs" />
+    <Compile Include="VLearningAid.cs" />
+    <EmbeddedResource Include="ConfigForm1.resx">
+      <DependentUpon>ConfigForm1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NotificationIcon.resx">
+      <DependentUpon>NotificationIcon.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="Dateien\bubble.bmp" />
+    <None Include="Dateien\bubble.gif" />
+    <None Include="Dateien\untitled.bmp" />
+    <None Include="Interop.SpeechLib.dll" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Dateien" />
+  </ItemGroup>
+</Project>
