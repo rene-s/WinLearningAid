@@ -12,14 +12,17 @@ using System.Text.RegularExpressions;
 
 namespace V_Learning_Aid
 {
-	/// <summary>
-	/// Description of Item.
-	/// </summary>
+	/**
+	 * List item
+	 */
 	public class Item
 	{
 		public String body = "Empty";
 		public String head = "Empty";
-		
+
+		/**
+		 * Set item attribute values
+		 */
 		public void Set(string head, string body) {
 			this.head = head.Trim();
 			this.body = body.Trim();

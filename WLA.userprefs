@@ -1,6 +1,19 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Text2Speech.cs">
+    <Files>
+      <File FileName="Item.cs" Line="25" Column="6" />
+      <File FileName="ItemsList.cs" Line="90" Column="1" />
+      <File FileName="Settings.cs" Line="1" Column="3" />
+      <File FileName="Text2Speech.cs" Line="93" Column="3" />
+      <File FileName="VLearningAid.cs" Line="6" Column="4" />
+      <File FileName="NotificationIcon.cs" Line="128" Column="56" />
+      <File FileName="ConfigForm1.cs" Line="42" Column="1" />
+      <File FileName="AssemblyInfo.cs" Line="1" Column="1" />
+      <File FileName="usr/Test-Mindmap.mm" Line="1" Column="1" />
+      <File FileName="usr/test.mm" Line="1" Column="1" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>

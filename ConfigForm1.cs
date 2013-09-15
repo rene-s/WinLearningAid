@@ -25,29 +25,32 @@ namespace V_Learning_Aid
 	{
 		//public ArrayList items = new ArrayList();
 		public ItemsList newitems = new ItemsList();
-		
+
+		/**
+		 * Constructor
+		 */
 		public ConfigForm1()
 		{
-			//
 			// The InitializeComponent() call is required for Windows Forms designer support.
-			//
-			
 			InitializeComponent();
 			LoadConfig();
-			//
 			// TODO: Add constructor code after the InitializeComponent() call.
-			//
 		}
-		
-		void SaveConfig() {
-			Settings.setString("RepeatTimes", repeatTimes.Value.ToString());
-			Settings.setString("RepeatMode", repeatMode.SelectedIndex.ToString());
+
+		/**
+		 * Save config
+		 */
+		void SaveConfig ()
+		{
+			Settings.setString ("RepeatTimes", repeatTimes.Value.ToString ());
+			Settings.setString ("RepeatMode", repeatMode.SelectedIndex.ToString ());
 			
-			if(File.Exists(textBox1.Text))
-				Settings.setString("Filename", textBox1.Text);
-			else
-				Settings.setString("Filename", "");
-			
+			if (File.Exists (textBox1.Text)) {
+				Settings.setString ("Filename", textBox1.Text);
+			} else {
+				Settings.setString ("Filename", "");
+			}
+
 			Settings.setString("dumpTooltips", dumpTooltips.Checked.ToString());
 			Settings.setString("intervalInt", intervalInt.Value.ToString());
 			Settings.setString("intervalUnit", intervalUnit.SelectedIndex.ToString());
@@ -60,9 +63,11 @@ namespace V_Learning_Aid
 			
 			LoadConfig();
 		}
-		
-		public void LoadConfig() {
 
+		/**
+		 * Load config
+		 */
+		public void LoadConfig() {
 			repeatTimes.Value = 999; 
 			repeatMode.SelectedIndex = 0;
 			textBox1.Text = Settings.getString("Filename", "");
@@ -95,7 +100,10 @@ namespace V_Learning_Aid
 				newitems.Shuffle();
 			}
 		}
-		   
+	    
+		/**
+		 * Traverse file
+		 */
 		void traverseFile(XmlNodeList elements, string question) {
 			string answer = "";
 			foreach (XmlElement element in elements) {
@@ -115,8 +123,11 @@ namespace V_Learning_Aid
 				newitems.Add(item);
 			}
 		}
+
+		/**
+		 * Read file
+		 */
 		void readFile(string filename) {
-    
 			if(filename == "") 
 			{
 				return;
@@ -146,41 +157,68 @@ namespace V_Learning_Aid
 			}
 			
 		}
-		
+
+		/**
+		 * Form load
+		 */
 		void ConfigForm1Load(object sender, EventArgs e)
 		{
 		}
-		
+
+		/**
+		 * Single click
+		 */
 		void Button1Click(object sender, EventArgs e)
 		{
 		}
-		
+
+		/**
+		 * Open file dialog
+		 */
 		void OpenFileDialog1FileOk(object sender, System.ComponentModel.CancelEventArgs e)
 		{
 		}
-		
+
+		/**
+		 * Handler
+		 */
 		void Button3Click(object sender, EventArgs e)
 		{
 		}
-		
+
+		/**
+		 * Handler
+		 */
 		void GroupBox1Enter(object sender, EventArgs e)
 		{
 		}
 		
+		/**
+		 * Handler
+		 */
 		void Label1Click(object sender, EventArgs e)
 		{
 		}
 		
+		/**
+		 * Handler
+		 */
 		void Button2Click(object sender, EventArgs e)
 		{
 		}
 		
+		/**
+		 * Handler
+		 */
 		void SpeakToolTipChanged(object sender, EventArgs e)
 		{
 			speakingPauseInt.Enabled = speakTooltip.Checked;
 			dumpTooltips.Enabled = speakTooltip.Checked;
 		}
-		
+
+		/**
+		 * Handler
+		 */
 		void RandomModeChanged(object sender, EventArgs e)
 		{
 			uniqItems.Enabled = rndSeq.Checked;
@@ -190,7 +228,9 @@ namespace V_Learning_Aid
 			}
 		}
 
-		
+		/**
+		 * Select file handler
+		 */
 		void SelectFile(object sender, EventArgs e)
 		{
 			Stream myStream = null;
@@ -219,24 +259,36 @@ namespace V_Learning_Aid
 				}
 			}
 		}
-		
+
+		/**
+		 * File tab click
+		 */
 		void FileTabClick(object sender, EventArgs e)
 		{
 		}
-		
+
+		/**
+         * Dialog OK button click
+		 */
 		void dlgOkBtnClick(object sender, EventArgs e)
 		{
 			Hide();
 			SaveConfig();
 		}
 		
+		/**
+         * Dialog Cancel button click
+		 */
 		void dlgCancelBtnClick(object sender, EventArgs e)
 		{
 			Hide();
 			LoadConfig();
 		}
-		
-		void intervalBoundary(object sender, EventArgs e)
+
+		/**
+         * Interval boundary
+         */
+        void intervalBoundary(object sender, EventArgs e)
 		{
 			int i = (int)intervalInt.Value;
 			int u = (int)intervalUnit.SelectedIndex;
@@ -256,7 +308,10 @@ namespace V_Learning_Aid
 			}
 			
 		}
-		
+
+		/**
+         * Repeat mode changed
+         */
 		void repeatModeChanged(object sender, EventArgs e)
 		{
 			repeatTimes.Tag = "Test";
@@ -269,7 +324,6 @@ namespace V_Learning_Aid
 					repeatTimes.Enabled = false;
 					break;
 			}
-			
 		}
 	}
 }

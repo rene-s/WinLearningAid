@@ -12,15 +12,21 @@ using System.Windows.Forms;
 
 namespace WLA
 {
-	/// <summary>
-	/// Description of Settings.
-	/// </summary>
+	/**
+	 * Handles settings
+	 */
 	public class Settings
 	{
+		/**
+		 * Constructor
+		 */
 		public Settings()
 		{
 		}
-		
+
+		/**
+		 * Get int value
+		 */
 		public static int getInt(string key, int def) 
 		{
 			try {
@@ -39,15 +45,24 @@ namespace WLA
 				return def;
 			}
 		}
-		
+
+		/**
+		 * Get int value
+		 */
 		public static int getInt(string key) {
 			return getInt(key, 0);
 		}
-		
+
+		/**
+		 * Get bool value
+		 */
 		public static bool getBool(string key) {
 			return getBool(key, false);
 		}
-		
+
+		/**
+		 * Get bool value
+		 */
 		public static bool getBool(string key, bool def) {
 			try {
 				switch(key) {
@@ -65,11 +80,17 @@ namespace WLA
 				return def;
 			}
 		}
-		
+
+		/**
+		 * Get string value
+		 */
 		public static string getString(string key) {
 			return getString(key,"");
 		}
-		
+
+		/**
+		 * Get string value
+		 */
 		public static string getString(string key, string def) {
 			try {
 				switch(key) {
@@ -84,7 +105,10 @@ namespace WLA
 				return def;
 			}
 		}
-		
+
+		/**
+		 * Set string value
+		 */
 		public static void setString(string key, string val) {
 			Application.UserAppDataRegistry.SetValue(key, val);
 		}

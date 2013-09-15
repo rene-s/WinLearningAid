@@ -1,7 +1,7 @@
 ﻿
-Microsoft Visual Studio Solution File, Format Version 9.00
-# Visual Studio 2005
-# SharpDevelop 2.2.1.2648
+Microsoft Visual Studio Solution File, Format Version 10.00
+# Visual Studio 2008
+# SharpDevelop 4.3
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WLA", "WLA.csproj", "{0215BE9E-354F-4AAE-BA2B-C9DF7CD1145B}"
 EndProject
 Global

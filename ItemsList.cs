@@ -15,18 +15,24 @@ using System.Windows.Forms;
 
 namespace WLA
 {
-	/// <summary>
-	/// Description of ItemsList.
-	/// </summary>
+	/**
+	 * List of items
+	 */
 	public class ItemsList
 	{
 		public ArrayList ytems = new ArrayList();
 		public int p = 0;
-		
+
+		/**
+		 * Constructor
+		 */
 		public ItemsList()
 		{
 		}
-		
+
+		/**
+		 * Shuffle items
+		 */
 		public void Shuffle()
 		{
 			Random r = new Random();
@@ -38,12 +44,18 @@ namespace WLA
 				ytems[idx] = tmp;
 			}
 		}
-		
+
+		/**
+		 * Add item
+		 */
 		public void Add(Item item) 
 		{
 			ytems.Add(item);
 		}
-		
+
+		/**
+		 * Get next item
+		 */
 		public Item Next()
 		{
 			// Traverse loop
@@ -56,14 +68,18 @@ namespace WLA
 			int i = rnd.Next(0, ytems.Count);
 			return ((Item)ytems[i]);
 		}
-		
-		public bool Dice() 
+
+		/**
+		 * Shuffle
+		 */
+		public bool Dice ()
 		{
-			int chance = Settings.getInt("chanceInt");
+			int chance = Settings.getInt ("chanceInt");
 			
-			if(chance>=100)
+			if (chance >= 100) {
 				return true;
-			
+			}
+
 			Random dice = new Random();
 			int roll = dice.Next(0, 100);
 			

@@ -1,4 +1,5 @@
-﻿<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="3.5">
   <PropertyGroup>
     <ProjectGuid>{0215BE9E-354F-4AAE-BA2B-C9DF7CD1145B}</ProjectGuid>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
@@ -11,6 +12,11 @@
     <WarningLevel>4</WarningLevel>
     <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
     <ApplicationIcon>Dateien\bubble.ico</ApplicationIcon>
+    <TargetFrameworkProfile>
+    </TargetFrameworkProfile>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <ProductVersion>9.0.21022</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
     <OutputPath>bin\Debug\</OutputPath>
@@ -39,13 +45,21 @@
   <ItemGroup>
     <Reference Include="Interop.SpeechLib">
       <HintPath>Dateien\Interop.SpeechLib.dll</HintPath>
-      <SpecificVersion>False</SpecificVersion>
     </Reference>
     <Reference Include="System" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
     <Reference Include="System.Data" />
+    <Reference Include="System.Data.DataSetExtensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
     <Reference Include="System.Drawing" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
+    <Reference Include="System.Xml.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AssemblyInfo.cs" />
@@ -63,12 +77,15 @@
     <EmbeddedResource Include="NotificationIcon.resx">
       <DependentUpon>NotificationIcon.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="app.config" />
     <None Include="Dateien\bubble.bmp" />
     <None Include="Dateien\bubble.gif" />
     <None Include="Dateien\untitled.bmp" />
     <None Include="Interop.SpeechLib.dll" />
+    <None Include="usr\Test-Mindmap.mm" />
+    <None Include="usr\test.mm" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Dateien" />
+    <Folder Include="usr\" />
   </ItemGroup>
 </Project>
